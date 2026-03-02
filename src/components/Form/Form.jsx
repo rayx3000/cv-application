@@ -1,0 +1,87 @@
+import React from 'react'
+import './Form.css'
+
+const Form = () => {
+  return (
+    <div className="form-container">
+        <h1>CV Form</h1>
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label htmlFor="name">Name:</label>
+                <input type="text" id="name" name="name" />
+                <label htmlFor="email">Email:</label>
+                <input type="email" id="email" name="email" />
+                <label htmlFor="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" />
+                <label htmlFor="address">Address:</label>
+                <input type="text" id="address" name="address" />
+                <label htmlFor="city">City:</label>
+                <input type="text" id="city" name="city" />
+                <label htmlFor="state">State/Province:</label>
+                <input type="text" id="state" name="state" />
+                <label htmlFor="zip">Zip/Postal Code:</label>
+                <input type="text" id="zip" name="zip" />
+                <label htmlFor="country">Country:</label>
+                <input type="text" id="country" name="country" />
+            </fieldset>
+            <fieldset>
+              <legend>Education Background</legend>
+              <label htmlFor="school">School Name:</label>
+              <input type="text" id="school" name="school" />
+              <label htmlFor="degree">Degree:</label>
+              <input type="text" id="degree" name="degree" />
+              <label htmlFor="field">Field of Study:</label>
+              <input type="text" id="field" name="field" />
+              <label htmlFor="startYear">Start:</label>
+              <input type="date" id="startYear" name="startYear" />
+              <label htmlFor="endYear">Graduate Year:</label>
+              <input type="date" id="endYear" name="endYear" />
+              <button id="addEducation" type="button">Add Education</button>
+            </fieldset>
+            <fieldset>
+              <legend>Work Experience</legend>
+              <label htmlFor="company">Company Name:</label>
+              <input type="text" id="company" name="company" />
+              <label htmlFor="position">Position:</label>
+              <input type="text" id="position" name="position" />
+              <label htmlFor="startDate">Start Date:</label>
+              <input type="date" id="startDate" name="startDate" />
+              <label htmlFor="endDate">End Date:</label>
+              <input type="date" id="endDate" name="endDate" />
+              <label htmlFor="description">Description:</label>
+              <textarea id="description" name="description"></textarea>
+              <button id="addExperience" type="button">Add Experience</button>
+            </fieldset>
+            <fieldset>
+              <legend>Skills</legend>
+              <label htmlFor="skills">List your skills:</label>
+              <input type="text" id="skills" name="skills" placeholder="e.g., JavaScript, React, Node.js" />
+              <button id="addSkill" type="button">Add Skill</button>
+            </fieldset>
+            <fieldset>
+              <legend>Certifications</legend>
+              <label htmlFor="certification">Certification Name:</label>
+              <input type="text" id="certification" name="certification" />
+              <label htmlFor="issuer">Issuing Organization:</label>
+              <input type="text" id="issuer" name="issuer" />
+              <label htmlFor="date">Date Obtained:</label>
+              <input type="date" id="date" name="date" />
+              <button id="addCertification" type="button">Add Certification</button>
+            </fieldset>          
+            <fieldset>
+              <legend>Additional Information</legend>
+              <label htmlFor="linkedin">LinkedIn Profile:</label>
+              <input type="url" id="linkedin" name="linkedin" />
+              <label htmlFor="github">GitHub Profile:</label>
+              <input type="url" id="github" name="github" />
+              <label htmlFor="portfolio">Portfolio Website:</label>
+              <input type="url" id="portfolio" name="portfolio" />
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+  )
+}
+
+export default Form
