@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 body {
-  font-family: 'Arimo', sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 20px;
+    font-family: 'Arimo', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #47b1e6;
+    background: -webkit-linear-gradient(18deg, rgba(71, 177, 230, 1) 0%, rgba(167, 78, 245, 1) 100%);
+    background: -moz-linear-gradient(18deg, rgba(71, 177, 230, 1) 0%, rgba(167, 78, 245, 1) 100%);
+    background: linear-gradient(18deg, rgba(71, 177, 230, 1) 0%, rgba(167, 78, 245, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#47B1E6", endColorstr="#A74EF5", GradientType=0);
 }

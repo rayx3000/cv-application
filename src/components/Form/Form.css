@@ -1,10 +1,21 @@
 .form-container {
-    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 50vw;
     margin: 0 auto;
+    background: #8855ed;
+    background: -webkit-linear-gradient(38deg, rgba(136, 85, 237, 0.78) 0%, rgba(45, 163, 253, 0.78) 100%);
+    background: -moz-linear-gradient(38deg, rgba(136, 85, 237, 0.78) 0%, rgba(45, 163, 253, 0.78) 100%);
+    background: linear-gradient(38deg, rgba(136, 85, 237, 0.78) 0%, rgba(45, 163, 253, 0.78) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8855ED", endColorstr="#2DA3FD", GradientType=0);
+    color: #fff;
+} 
+
+.form-container > h1{
+    font-family: "Space Grotesk", sans-serif;
+    text-align: center;
+    font-size: 3.2rem;
 }
 
 form{
@@ -17,4 +28,58 @@ fieldset {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+:is(input, textarea){
+    background-color: #a579fc;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+}
+
+:is(input, textarea):focus {
+    outline: #fff solid 2px;
+}
+
+textarea{
+    resize: none;
+    height: 125px;
+}
+
+button{
+    cursor: pointer;
+    transform: all 0.2s ease-in-out;
+}
+
+button:active{
+    transform: scale(0.92)
+}
+
+fieldset > button{
+    display: inline-block;
+    width: 12vw;
+    padding: 5px;
+    border: none;
+    border-radius: 12px;
+    align-self: center;
+    background-color: rgb(102, 0, 218);
+    color: #fff;
+}
+
+form > button{
+    display: inline-block;
+    width: 15vw;
+    padding: 5px;
+    border: none;
+    border-radius: 12px;
+    align-self: center;
+    background-color: rgb(157, 93, 230);
+    color: #fff;
+}
+
+fieldset > button:hover{
+    background-color: rgb(149, 63, 247);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

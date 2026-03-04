@@ -9,26 +9,26 @@ const Form = () => {
             <fieldset>
                 <legend>Personal Information</legend>
                 <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" />
+                <input type="text" id="name" name="name" placeholder='e.g Sofia Santos'/>
                 <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" />
+                <input type="email" id="email" name="email" placeholder='e.g iloveyou143@gmail.com' />
                 <label htmlFor="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" />
+                <input type="tel" id="phone" name="phone" placeholder='e.g +639123456789' />
                 <label htmlFor="address">Address:</label>
-                <input type="text" id="address" name="address" />
+                <input type="text" id="address" name="address" placeholder='e.g 123 Main Street'/>
                 <label htmlFor="city">City:</label>
-                <input type="text" id="city" name="city" />
+                <input type="text" id="city" name="city" placeholder='e.g Manila'/>
                 <label htmlFor="state">State/Province:</label>
-                <input type="text" id="state" name="state" />
+                <input type="text" id="state" name="state" placeholder='e.g Metro Manila'/>
                 <label htmlFor="zip">Zip/Postal Code:</label>
-                <input type="text" id="zip" name="zip" />
+                <input type="text" id="zip" name="zip" placeholder="e.g. 1000"/>
                 <label htmlFor="country">Country:</label>
-                <input type="text" id="country" name="country" />
+                <input type="text" id="country" name="country" placeholder='e.g Philippines'/>
             </fieldset>
             <fieldset>
               <legend>Education Background</legend>
               <label htmlFor="school">School Name:</label>
-              <input type="text" id="school" name="school" />
+              <input type="text" id="school" name="school"/>
               <label htmlFor="degree">Degree:</label>
               <input type="text" id="degree" name="degree" />
               <label htmlFor="field">Field of Study:</label>

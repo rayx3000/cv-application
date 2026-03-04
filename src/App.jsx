@@ -1,10 +1,10 @@
-import Form from "./components/Form/Form"
+import Main from "./pages/Main"
 
 function App() {
 
   return (
     <>
-      <Form />
+      <Main/>
     </>
   )
 }
