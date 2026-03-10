@@ -10,7 +10,7 @@
     background: linear-gradient(38deg, rgba(136, 85, 237, 0.78) 0%, rgba(45, 163, 253, 0.78) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8855ED", endColorstr="#2DA3FD", GradientType=0);
     color: #fff;
-} 
+}
 
 .form-container > h1{
     font-family: "Space Grotesk", sans-serif;
@@ -22,6 +22,8 @@ form{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-height: 1250px;
+    overflow-y: scroll;
 }
 
 fieldset {

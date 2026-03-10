@@ -10,3 +10,35 @@ body {
     background: linear-gradient(18deg, rgba(71, 177, 230, 1) 0%, rgba(167, 78, 245, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#47B1E6", endColorstr="#A74EF5", GradientType=0);
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #47b1e6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(38deg, rgb(136, 85, 237) 0%, rgba(45, 163, 253) 100%);
+    border-radius: 10px;
+    border: 1px solid rgb(17, 152, 255);
+    box-shadow: 
+        0 0 10px rgba(136, 85, 237, 0.78),
+        inset 0 0 6px rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(38deg, rgb(149, 102, 245) 0%, rgb(84, 181, 255) 100%);
+    box-shadow: 
+        0 0 20px rgb(176, 137, 253),
+        inset 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(38deg, rgb(163, 119, 250) 0%, rgb(86, 179, 250) 100%);
+    box-shadow: 
+        0 0 30px rgb(181, 153, 238),
+        inset 0 0 10px rgba(255, 255, 255, 0.6);
+}
