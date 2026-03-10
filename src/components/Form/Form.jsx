@@ -10,6 +10,13 @@ const Form = () => {
                 <legend>Personal Information</legend>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder='e.g Sofia Santos'/>
+                <label htmlFor="jobTitle">Job Title:</label>
+                <input type="text" id="jobTitle" name="jobTitle" placeholder='e.g Software Engineer'/>
+                <label htmlFor="summary">Summary:</label>
+                <textarea id="summary" name="summary" placeholder='Write a brief summary about yourself...'></textarea>
+            </fieldset> 
+            <fieldset>
+              <legend>Contact</legend>
                 <label htmlFor="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder='e.g iloveyou143@gmail.com' />
                 <label htmlFor="phone">Phone:</label>
@@ -68,6 +75,24 @@ const Form = () => {
               <label htmlFor="date">Date Obtained:</label>
               <input type="date" id="date" name="date" />
               <button id="addCertification" type="button">Add Certification</button>
+            </fieldset>
+            <fieldset>
+              <legend>Languages</legend>
+              <label htmlFor="language">Language:</label>
+              <input type="text" id="language" name="language" placeholder='e.g English, Filipino, Spanish' />
+              <button id="addLanguage" type="button">Add Language</button>
+            </fieldset>
+            <fieldset>
+              <legend>References</legend>
+              <label htmlFor="referenceName">Reference Name:</label>
+              <input type="text" id="referenceName" name="referenceName" />
+              <label htmlFor="referenceContact">Reference Contact:</label>
+              <input type="text" id="referenceContact" name="referenceContact" />
+              <label htmlFor="referenceEmail">Reference Email:</label>
+              <input type="email" id="referenceEmail" name="referenceEmail" />
+              <label htmlFor='referenceWork'>Reference Work:</label>
+              <input type="text" id="referenceWork" name="referenceWork" />
+              <button id="addReference" type="button">Add Reference</button>
             </fieldset>          
             <fieldset>
               <legend>Additional Information</legend>
