@@ -34,6 +34,38 @@
   gap: 28px;
 }
 
+/* Header */
+.cv-header {
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.cv-name {
+  font-size: 40px;
+  font-weight: 900;
+  color: #ecf2ff;
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.cv-job-title {
+  font-size: 13px;
+  color: #dde0e6;
+  letter-spacing: 4px;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  margin: 0 0 14px 0;
+}
+
+.cv-summary {
+  font-size: 13px;
+  color: #dde0e6;
+  line-height: 1.75;
+  margin: 0;
+}
+
+
 /* Avatar */
 .cv-avatar {
   display: flex;
@@ -146,36 +178,6 @@
   gap: 28px;
 }
 
-/* Header */
-.cv-header {
-  margin-bottom: 4px;
-}
-
-.cv-name {
-  font-size: 40px;
-  font-weight: 900;
-  color: #1a202c;
-  margin: 0 0 4px 0;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-}
-
-.cv-job-title {
-  font-size: 13px;
-  color: #718096;
-  letter-spacing: 4px;
-  font-family: Arial, sans-serif;
-  text-transform: uppercase;
-  margin: 0 0 14px 0;
-}
-
-.cv-summary {
-  font-size: 13px;
-  color: #4a5568;
-  line-height: 1.75;
-  margin: 0;
-}
-
 /* Sections */
 .cv-section {
   display: flex;
@@ -195,6 +197,61 @@
   background-color: #e2e8f0;
   margin-bottom: 20px;
 }
+
+/* Certifications */
+
+.cv-cert-item {
+  display: flex;
+  gap: 12px;
+}
+
+.cv-cert-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.cv-cert-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #718096;
+  background-color: #fff;
+  flex-shrink: 0;
+}
+
+.cv-cert-date {
+  font-size: 12.5px;  
+  color: #718096;
+  margin-top: 5px;
+}
+
+.cv-cert-content{
+  flex: 1;
+}
+
+.cv-cert-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1a202c;
+  margin: 0 0 4px 0;
+}
+
+.cv-cert-company{
+  font-size: 14px;
+  color: #718096;
+  margin: 0;
+}
+
+.cv-cert-desc {
+  font-size: 12.5px;
+  color: #4a5568;
+  line-height: 1.75;
+  margin: 0;
+  text-align: justify;
+}
+
 
 /* Experience */
 .cv-exp-item {

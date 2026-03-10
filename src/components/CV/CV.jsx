@@ -1,5 +1,5 @@
-import React from 'react'
-import './CV.css'
+import React from 'react';
+import './CV.css';
 
 const resumeData = {
   name: "Mariana Anderson",
@@ -25,27 +25,29 @@ const resumeData = {
   ],
   expertise: ["UI/UX", "Visual Design", "Wireframes", "Storyboards", "User Flows", "Process Flows"],
   languages: ["English", "Spanish"],
+  // Updated certifications to include the new structure
+  certifications: [
+    {
+      date: "March 20, 2025",
+      name: "Digital Marketing Professional",
+      company: "Cisco Certification",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet."
+    }
+  ],
   experience: [
     {
       years: "2022 - 2025",
       company: "Ginyard International Co. | 123 Anywhere St., Any City",
       role: "Marketing Manager",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique feugiat. Mauris convallis, mi at mattis malesuada, neque nulla volutpat dolor, hendrerit faucibus eros nibh ut nunc. Proin luctus urna id nunc sagittis dignissim. Sed in libero sed libero dictum dapibus. Vivamus fermentum est eget lorem aliquet, vel tempus metus dignissim.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum.",
     },
     {
       years: "2020 - 2022",
       company: "Ginyard International Co. | 123 Anywhere St., Any City",
       role: "Inside Sales Representative",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique feugiat. Mauris convallis, mi at mattis malesuada, neque nulla volutpat dolor, hendrerit faucibus eros nibh ut nunc. Proin luctus urna id nunc sagittis dignissim. Sed in libero sed libero dictum dapibus. Vivamus fermentum est eget lorem aliquet, vel tempus metus dignissim.",
-    },
-    {
-      years: "2018 - 2020",
-      company: "Ginyard International Co. | 123 Anywhere St., Any City",
-      role: "Inside Sales Representative",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique feugiat. Mauris convallis, mi at mattis malesuada, neque nulla volutpat dolor, hendrerit faucibus eros nibh ut nunc. Proin luctus urna id nunc sagittis dignissim. Sed in libero sed libero dictum dapibus. Vivamus fermentum est eget lorem aliquet, vel tempus metus dignissim.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum.",
     },
   ],
   references: [
@@ -62,18 +64,24 @@ const resumeData = {
       email: "hello@reallygreatsite.com",
     },
   ],
-}
+};
 
 const CV = () => {
   return (
     <div className="cv-container">
-      <h1>CV Preview</h1>
+      <h1>My CV</h1>
       <div className="cv-content">
-
+        
         {/* LEFT SIDEBAR */}
         <div className="cv-sidebar">
           <div className="cv-avatar">
             <span>👤</span>
+          </div>
+
+          <div className="cv-header">
+            <h2 className="cv-name">{resumeData.name}</h2>
+            <p className="cv-job-title">{resumeData.title}</p>
+            <p className="cv-summary">{resumeData.summary}</p>
           </div>
 
           <div className="cv-side-section">
@@ -117,12 +125,31 @@ const CV = () => {
 
         {/* RIGHT MAIN CONTENT */}
         <div className="cv-main">
-          <div className="cv-header">
-            <h2 className="cv-name">{resumeData.name}</h2>
-            <p className="cv-job-title">{resumeData.title}</p>
-            <p className="cv-summary">{resumeData.summary}</p>
+          
+          {/* Certifications Section */}
+          <div className="cv-section">
+            <h3 className="cv-section-title">Certifications</h3>
+            <div className="cv-section-divider" />
+            <div className="cv-cert-grid">
+              {/* FIXED: Wrapped in .map() so 'i' is defined */}
+              {resumeData.certifications.map((cert, i) => (
+                <div key={i} className='cv-cert-item'>
+                  <div className='cv-cert-timeline'>
+                    <div className="cv-cert-dot" />
+                    {i < resumeData.certifications.length - 1 && <div className="cv-cert-line" />}
+                  </div>
+                  <div className='cv-cert-content'>
+                    <p className='cv-cert-date'>{cert.date}</p>
+                    <p className="cv-cert-name">{cert.name}</p>
+                    <p className="cv-cert-company">{cert.company}</p>
+                    <p className='cv-cert-desc'>{cert.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
+          {/* Experience Section */}
           <div className="cv-section">
             <h3 className="cv-section-title">Experience</h3>
             <div className="cv-section-divider" />
@@ -142,6 +169,7 @@ const CV = () => {
             ))}
           </div>
 
+          {/* Reference Section */}
           <div className="cv-section">
             <h3 className="cv-section-title">Reference</h3>
             <div className="cv-section-divider" />
@@ -151,22 +179,22 @@ const CV = () => {
                   <p className="cv-ref-name">{ref.name}</p>
                   <p className="cv-ref-company">{ref.company}</p>
                   <div className="cv-ref-detail">
-                    <span className="cv-ref-label">Phone:</span>
+                    <span className="cv-ref-label">Phone: </span>
                     <span>{ref.phone}</span>
                   </div>
                   <div className="cv-ref-detail">
-                    <span className="cv-ref-label">Email :</span>
+                    <span className="cv-ref-label">Email: </span>
                     <span>{ref.email}</span>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
 
-      </div>
-    </div>
-  )
-}
+        </div> {/* End of cv-main */}
+      </div> {/* End of cv-content */}
+    </div> /* End of cv-container */
+  );
+};
 
-export default CV
+export default CV;
