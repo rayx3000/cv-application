@@ -18,18 +18,33 @@
     font-size: 3.2rem;
 }
 
-form{
+.form-content{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     max-height: 1250px;
     overflow-y: scroll;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 92%;
+}
+
+form > p{
+    font-size: 20px;
+    font-weight: bold;
 }
 
 fieldset {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    padding: 3%;
+    border: none;
 }
 
 :is(input, textarea){
@@ -84,4 +99,48 @@ form > button{
 fieldset > button:hover{
     background-color: rgb(149, 63, 247);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.saved-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.saved-container > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    background-color: rgb(149, 63, 247);
+    padding: 2px 12px;
+    border-radius: 12px;
+}
+
+.saved-container > div:hover{
+    background-color: rgb(175, 107, 253);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.saved-options{
+    display: flex;
+    gap: 8px;
+}
+
+.saved-options > i{
+    color: #fff;
+    font-size: 18px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.saved-options > i:hover{
+    color: rgb(230, 230, 230);
+    transform: scale(1.2);
+}
+
+.saved-options > i:active{
+    color: rgb(218, 218, 218);
+    transform: scale(1.1);
 }
