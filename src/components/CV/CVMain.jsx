@@ -1,0 +1,77 @@
+import React from 'react'
+import { resumeData } from './ResumeData.js';
+
+const CVMain = () => {
+  return (
+    <div className="cv-main">
+          
+          {/* Certifications Section */}
+          <div className="cv-section">
+            <h3 className="cv-section-title">Certifications</h3>
+            <div className="cv-section-divider" />
+            <div className="cv-cert-grid">
+              {/* FIXED: Wrapped in .map() so 'i' is defined */}
+              {resumeData.certifications.map((cert, i) => (
+                <div key={i} className='cv-cert-item'>
+                  <div className='cv-cert-timeline'>
+                    <div className="cv-cert-dot" />
+                    {i < resumeData.certifications.length - 1 && <div className="cv-cert-line" />}
+                  </div>
+                  <div className='cv-cert-content'>
+                    <p className='cv-cert-date'>{cert.date}</p>
+                    <p className="cv-cert-name">{cert.name}</p>
+                    <p className="cv-cert-company">{cert.company}</p>
+                    <p className='cv-cert-desc'>{cert.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Experience Section */}
+          <div className="cv-section">
+            <h3 className="cv-section-title">Experience</h3>
+            <div className="cv-section-divider" />
+            {resumeData.experience.map((exp, i) => (
+              <div key={i} className="cv-exp-item">
+                <div className="cv-exp-timeline">
+                  <div className="cv-exp-dot" />
+                  {i < resumeData.experience.length - 1 && <div className="cv-exp-line" />}
+                </div>
+                <div className="cv-exp-content">
+                  <p className="cv-exp-years">{exp.years}</p>
+                  <p className="cv-exp-company">{exp.company}</p>
+                  <p className="cv-exp-role">{exp.role}</p>
+                  <p className="cv-exp-desc">{exp.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Reference Section */}
+          <div className="cv-section">
+            <h3 className="cv-section-title">Reference</h3>
+            <div className="cv-section-divider" />
+            <div className="cv-ref-grid">
+              {resumeData.references.map((ref, i) => (
+                <div key={i} className="cv-ref-item">
+                  <p className="cv-ref-name">{ref.name}</p>
+                  <p className="cv-ref-company">{ref.company}</p>
+                  <div className="cv-ref-detail">
+                    <span className="cv-ref-label">Phone: </span>
+                    <span>{ref.phone}</span>
+                  </div>
+                  <div className="cv-ref-detail">
+                    <span className="cv-ref-label">Email: </span>
+                    <span>{ref.email}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div> 
+  )
+}
+
+export default CVMain
