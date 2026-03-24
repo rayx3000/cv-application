@@ -8,22 +8,22 @@ const SkillsForm = () => {
         <div className='skills'>
           <p>JavaScript</p>
           <div className='saved-options'>
-            <i class="fa-solid fa-pen"></i>
-            <i class="fa-solid fa-trash-can"></i>
+            <i className="className-solid fa-pen"></i>
+            <i className="className-solid fa-trash-can"></i>
           </div>
         </div>
         <div className='skills'>
           <p>HTML/CSS</p>
           <div className='saved-options'>
-            <i class="fa-solid fa-pen"></i>
-            <i class="fa-solid fa-trash-can"></i>
+            <i className="fa-solid fa-pen"></i>
+            <i className="fa-solid fa-trash-can"></i>
           </div>
         </div>
         <div className='skills'>
           <p>Graphic Design</p>
           <div className='saved-options'>
-            <i class="fa-solid fa-pen"></i>
-            <i class="fa-solid fa-trash-can"></i>
+            <i className="fa-solid fa-pen"></i>
+            <i className="fa-solid fa-trash-can"></i>
           </div>
         </div>
       </div>

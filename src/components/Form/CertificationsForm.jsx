@@ -8,15 +8,15 @@ const CertificationsForm = () => {
           <div>
             <p><span>AWS Certified Solutions Architect</span>/<span>Amazon Web Services</span></p>
             <div className='saved-options'>
-              <i class="fa-solid fa-pen"></i>
-              <i class="fa-solid fa-trash-can"></i>
+              <i className="fa-solid fa-pen"></i>
+              <i className="fa-solid fa-trash-can"></i>
             </div>
           </div>
           <div>
             <p><span>Google Certified Professional Cloud Architect</span>/<span>Google Cloud</span></p>
             <div className='saved-options'>
-              <i class="fa-solid fa-pen"></i>
-              <i class="fa-solid fa-trash-can"></i>
+              <i className="fa-solid fa-pen"></i>
+              <i className="fa-solid fa-trash-can"></i>
             </div>
           </div>
         </div>

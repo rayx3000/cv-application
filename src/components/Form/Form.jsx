@@ -10,20 +10,20 @@ import LanguagesForm from './LanguagesForm.jsx'
 import ReferencesForm from './ReferencesForm.jsx'
 import AddInfoForm from './AddInfoForm.jsx'
 
-const Form = () => {
+const Form = ({ setResumeData, resumeData }) => {
   return (
     <div className="form-container">
         <h1>CV Form</h1>
         <div className="form-content">
-            <PersonalForm />
-            <ContactForm />
-            <EducationForm />
-            <WorkForm />
-            <SkillsForm />
-            <CertificationsForm />
-            <LanguagesForm />
-            <ReferencesForm />
-            <AddInfoForm />
+            <PersonalForm setResumeData={setResumeData} resumeData={resumeData} />
+            <ContactForm setResumeData={setResumeData} resumeData={resumeData} />
+            <EducationForm setResumeData={setResumeData} resumeData={resumeData} />
+            <WorkForm setResumeData={setResumeData} resumeData={resumeData} />
+            <SkillsForm setResumeData={setResumeData} resumeData={resumeData} />
+            <CertificationsForm setResumeData={setResumeData} resumeData={resumeData} />
+            <LanguagesForm setResumeData={setResumeData} resumeData={resumeData} />
+            <ReferencesForm setResumeData={setResumeData} resumeData={resumeData} />
+            <AddInfoForm setResumeData={setResumeData} resumeData={resumeData} />
         </div>
     </div>
   )

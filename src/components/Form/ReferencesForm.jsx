@@ -8,8 +8,8 @@ const ReferencesForm = () => {
           <div>
             <p><span>John Doe</span>/<span>Open AI</span></p>
             <div className='saved-options'>
-              <i class="fa-solid fa-pen"></i>
-              <i class="fa-solid fa-trash-can"></i>
+              <i className="fa-solid fa-pen"></i>
+              <i className="fa-solid fa-trash-can"></i>
             </div>
           </div>
         </div>

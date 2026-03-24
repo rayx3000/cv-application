@@ -1,7 +1,11 @@
 import React from 'react'
-import { resumeData } from './ResumeData.js';
 
-const CVMain = () => {
+const CVMain = ({ resumeData }) => {
+  if (!resumeData) {
+    return null;
+  }
+  
+  const { certifications, experience, references } = resumeData;
   return (
     <div className="cv-main">
           
@@ -10,12 +14,11 @@ const CVMain = () => {
             <h3 className="cv-section-title">Certifications</h3>
             <div className="cv-section-divider" />
             <div className="cv-cert-grid">
-              {/* FIXED: Wrapped in .map() so 'i' is defined */}
-              {resumeData.certifications.map((cert, i) => (
+              {certifications.map((cert, i) => (
                 <div key={i} className='cv-cert-item'>
                   <div className='cv-cert-timeline'>
                     <div className="cv-cert-dot" />
-                    {i < resumeData.certifications.length - 1 && <div className="cv-cert-line" />}
+                    {i < certifications.length - 1 && <div className="cv-cert-line" />}
                   </div>
                   <div className='cv-cert-content'>
                     <p className='cv-cert-date'>{cert.date}</p>
@@ -32,11 +35,11 @@ const CVMain = () => {
           <div className="cv-section">
             <h3 className="cv-section-title">Experience</h3>
             <div className="cv-section-divider" />
-            {resumeData.experience.map((exp, i) => (
+            {experience.map((exp, i) => (
               <div key={i} className="cv-exp-item">
                 <div className="cv-exp-timeline">
                   <div className="cv-exp-dot" />
-                  {i < resumeData.experience.length - 1 && <div className="cv-exp-line" />}
+                  {i < experience.length - 1 && <div className="cv-exp-line" />}
                 </div>
                 <div className="cv-exp-content">
                   <p className="cv-exp-years">{exp.years}</p>
@@ -53,7 +56,7 @@ const CVMain = () => {
             <h3 className="cv-section-title">Reference</h3>
             <div className="cv-section-divider" />
             <div className="cv-ref-grid">
-              {resumeData.references.map((ref, i) => (
+              {references.map((ref, i) => (
                 <div key={i} className="cv-ref-item">
                   <p className="cv-ref-name">{ref.name}</p>
                   <p className="cv-ref-company">{ref.company}</p>

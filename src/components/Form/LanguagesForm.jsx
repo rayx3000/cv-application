@@ -8,22 +8,22 @@ const LanguagesForm = () => {
         <div>
           <p><span>English</span></p>
           <div className='saved-options'>
-            <i class="fa-solid fa-pen"></i>
-            <i class="fa-solid fa-trash-can"></i>
+            <i className="fa-solid fa-pen"></i>
+            <i className="fa-solid fa-trash-can"></i>
           </div>
         </div>
         <div>
           <p><span>Filipino</span></p>
           <div className='saved-options'>
-            <i class="fa-solid fa-pen"></i>
-            <i class="fa-solid fa-trash-can"></i>
+            <i className="fa-solid fa-pen"></i>
+            <i className="fa-solid fa-trash-can"></i>
           </div>
         </div>
         <div>
           <p><span>Spanish</span></p>
           <div className='saved-options'>
-            <i class="fa-solid fa-pen"></i>
-            <i class="fa-solid fa-trash-can"></i>
+            <i className="fa-solid fa-pen"></i>
+            <i className="fa-solid fa-trash-can"></i>
           </div>
         </div>
       </div>
