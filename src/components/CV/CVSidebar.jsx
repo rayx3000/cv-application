@@ -5,7 +5,7 @@ const CVSidebar = ({ resumeData }) => {
     return null;
   }
   
-  const { personalInfo, education, expertise, languages } = resumeData;
+  const { personalInfo, expertise, languages, additionalInfo } = resumeData;
   const { name, title, jobTitle, summary, contact } = personalInfo;
   return (
     <div className="cv-sidebar">
@@ -19,6 +19,36 @@ const CVSidebar = ({ resumeData }) => {
         <p className="cv-summary">{summary}</p>
         </div>
 
+        {additionalInfo && (additionalInfo.linkedin || additionalInfo.github || additionalInfo.portfolio) && (
+          <div className="cv-side-section">
+            <h3 className="cv-side-title">Links</h3>
+            {additionalInfo.linkedin && (
+              <>
+                <p className="cv-link-label">LinkedIn</p>
+                <a href={additionalInfo.linkedin} className="cv-link-value" target="_blank" rel="noopener noreferrer">
+                  {additionalInfo.linkedin.replace(/^https?:\/\/(www\.)?/, '')}
+                </a>
+              </>
+            )}
+            {additionalInfo.github && (
+              <>
+                <p className="cv-link-label">GitHub</p>
+                <a href={additionalInfo.github} className="cv-link-value" target="_blank" rel="noopener noreferrer">
+                  {additionalInfo.github.replace(/^https?:\/\/(www\.)?/, '')}
+                </a>
+              </>
+            )}
+            {additionalInfo.portfolio && (
+              <>
+                <p className="cv-link-label">Portfolio</p>
+                <a href={additionalInfo.portfolio} className="cv-link-value" target="_blank" rel="noopener noreferrer">
+                  {additionalInfo.portfolio.replace(/^https?:\/\/(www\.)?/, '')}
+                </a>
+              </>
+            )}
+          </div>
+        )}
+
         <div className="cv-side-section">
         <h3 className="cv-side-title">Contact</h3>
         <p className="cv-contact-label">Phone</p>
@@ -27,17 +57,6 @@ const CVSidebar = ({ resumeData }) => {
         <p className="cv-contact-value">{contact?.email}</p>
         <p className="cv-contact-label">Address</p>
         <p className="cv-contact-value">{contact?.address}</p>
-        </div>
-
-        <div className="cv-side-section">
-        <h3 className="cv-side-title">Education</h3>
-        {education?.map((edu, i) => (
-            <div key={i} className="cv-edu-item">
-            <p className="cv-edu-year">{edu.years}</p>
-            <p className="cv-edu-degree">{edu.degree}</p>
-            <p className="cv-edu-school">{edu.school}</p>
-            </div>
-        ))}
         </div>
 
         <div className="cv-side-section">

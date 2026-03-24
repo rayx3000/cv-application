@@ -1,29 +1,86 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const ReferencesForm = () => {
+const ReferencesForm = ({ setResumeData, resumeData }) => {
+  const [newRef, setNewRef] = useState({
+    name: '',
+    company: '',
+    phone: '',
+    email: ''
+  });
+  const [isEditing, setIsEditing] = useState(false);
+  const [editIndex, setEditIndex] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewRef(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleAdd = () => {
+    if (isEditing) {
+      setResumeData(prevData => {
+        const updated = [...prevData.references];
+        updated[editIndex] = newRef;
+        return { ...prevData, references: updated };
+      });
+      setIsEditing(false);
+      setEditIndex(null);
+    } else {
+      setResumeData(prevData => ({
+        ...prevData,
+        references: [...prevData.references, newRef]
+      }));
+    }
+    setNewRef({ name: '', company: '', phone: '', email: '' });
+  };
+
+  const handleEdit = (index) => {
+    setNewRef(resumeData.references[index]);
+    setIsEditing(true);
+    setEditIndex(index);
+  };
+
+  const handleDelete = (index) => {
+    setResumeData(prevData => ({
+      ...prevData,
+      references: prevData.references.filter((_, i) => i !== index)
+    }));
+    
+    if (isEditing && editIndex === index) {
+      setIsEditing(false);
+      setEditIndex(null);
+      setNewRef({ name: '', company: '', phone: '', email: '' });
+    } else if (isEditing && editIndex > index) {
+      setEditIndex(editIndex - 1);
+    }
+  };
+
   return (
      <form>
         <p>References</p>
         <div className='saved-container references-completed'>
-          <div>
-            <p><span>John Doe</span>/<span>Open AI</span></p>
-            <div className='saved-options'>
-              <i className="fa-solid fa-pen"></i>
-              <i className="fa-solid fa-trash-can"></i>
+          {resumeData?.references?.map((ref, index) => (
+            <div key={index}>
+              <p><span>{ref.name}</span>/<span>{ref.company}</span></p>
+              <div className='saved-options'>
+                <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
+                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
         <fieldset>
           <label htmlFor="referenceName">Reference Name:</label>
-          <input type="text" id="referenceName" name="referenceName" placeholder='e.g. Jane Smith' />
+          <input type="text" id="referenceName" name="name" placeholder='e.g. Jane Smith' value={newRef.name || ''} onChange={handleChange} />
           <label htmlFor="referenceContact">Reference Contact:</label>
-          <input type="text" id="referenceContact" name="referenceContact" placeholder='e.g. 123-456-7890' />
+          <input type="text" id="referenceContact" name="phone" placeholder='e.g. 123-456-7890' value={newRef.phone || ''} onChange={handleChange} />
           <label htmlFor="referenceEmail">Reference Email:</label>
-          <input type="email" id="referenceEmail" name="referenceEmail" placeholder='e.g. janesmith@example.com' />
+          <input type="email" id="referenceEmail" name="email" placeholder='e.g. janesmith@example.com' value={newRef.email || ''} onChange={handleChange} />
           <label htmlFor='referenceWork'>Reference Work:</label>
-          <input type="text" id="referenceWork" name="referenceWork" placeholder='e.g. Software Engineer' />
+          <input type="text" id="referenceWork" name="company" placeholder='e.g. Software Engineer' value={newRef.company || ''} onChange={handleChange} />
         </fieldset>
-        <button id="addReference" type="button">Add Reference</button>
+        <button id="addReference" type="button" onClick={handleAdd}>
+          {isEditing ? 'Update Reference' : 'Add Reference'}
+        </button>
       </form>  
   )
 }
