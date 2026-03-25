@@ -1,16 +1,13 @@
 import React from 'react'
 
-const ContactForm = ({ setResumeData }) => {
+const ContactForm = ({ setResumeData, resumeData }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setResumeData(prevData => ({
       ...prevData,
-      personalInfo: {
-        ...prevData.personalInfo,
-        contact: {
-          ...prevData.personalInfo.contact,
-          [name]: value
-        }
+      contact: {
+        ...prevData.contact,
+        [name]: value
       }
     }));
   };
@@ -20,19 +17,11 @@ const ContactForm = ({ setResumeData }) => {
       <p>Contact</p>
       <fieldset>
         <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder='e.g iloveyou143@gmail.com' onChange={handleChange} />
+        <input type="email" id="email" name="email" placeholder='e.g iloveyou143@gmail.com' value={resumeData?.contact?.email || ''} onChange={handleChange} />
         <label htmlFor="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" placeholder='e.g +639123456789' onChange={handleChange} />
+        <input type="tel" id="phone" name="phone" placeholder='e.g +639123456789' value={resumeData?.contact?.phone || ''} onChange={handleChange} />
         <label htmlFor="address">Address:</label>
-        <input type="text" id="address" name="address" placeholder='e.g 123 Main Street' onChange={handleChange}/>
-        <label htmlFor="city">City:</label>
-        <input type="text" id="city" name="city" placeholder='e.g Manila' onChange={handleChange}/>
-        <label htmlFor="state">State/Province:</label>
-        <input type="text" id="state" name="state" placeholder='e.g Metro Manila' onChange={handleChange}/>
-        <label htmlFor="zip">Zip/Postal Code:</label>
-        <input type="text" id="zip" name="zip" placeholder="e.g. 1000" onChange={handleChange}/>
-        <label htmlFor="country">Country:</label>
-        <input type="text" id="country" name="country" placeholder='e.g Philippines' onChange={handleChange}/>
+        <input type="text" id="address" name="address" placeholder='e.g 123 Main Street' value={resumeData?.contact?.address || ''} onChange={handleChange}/>
       </fieldset>
     </form>
   )

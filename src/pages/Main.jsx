@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import Form from "../components/Form/Form"
-import CV from "../components/CV/CV"
+import React from 'react';
+import Form from "../components/Form/Form";
+import CV from "../components/CV/CV";
 import './Main.css';
-import { resumeData as initialData } from '../components/CV/ResumeData.js';
+import { useResumeData } from '../components/CV/useResumeData.js';
 
 const Main = () => {
-  const [resumeData, setResumeData] = useState(initialData);
+  const { resumeData, updateResumeData } = useResumeData();
 
   return (
     <main>
-        <Form setResumeData={setResumeData} resumeData={resumeData} />
+        <Form setResumeData={updateResumeData} resumeData={resumeData} />
         <CV resumeData={resumeData} />
     </main>
   )

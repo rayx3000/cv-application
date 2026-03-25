@@ -61,4 +61,9 @@ export const resumeData = {
       email: "hello@reallygreatsite.com",
     },
   ],
+  additionalInfo: {
+    linkedin: "",
+    github: "",
+    portfolio: "",
+  },
 };

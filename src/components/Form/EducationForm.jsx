@@ -4,9 +4,7 @@ const EducationForm = ({ setResumeData, resumeData }) => {
   const [newEducation, setNewEducation] = useState({
     school: '',
     degree: '',
-    field: '',
-    startYear: '',
-    endYear: ''
+    years: ''
   });
   const [isEditing, setIsEditing] = useState(false);
   const [editIndex, setEditIndex] = useState(null);
@@ -34,9 +32,7 @@ const EducationForm = ({ setResumeData, resumeData }) => {
     setNewEducation({
       school: '',
       degree: '',
-      field: '',
-      startYear: '',
-      endYear: ''
+      years: ''
     });
   };
 
@@ -52,16 +48,13 @@ const EducationForm = ({ setResumeData, resumeData }) => {
       education: prevData.education.filter((_, i) => i !== index)
     }));
     
-    // Reset edit state if deleting the item currently being edited
     if (isEditing && editIndex === index) {
       setIsEditing(false);
       setEditIndex(null);
       setNewEducation({
         school: '',
         degree: '',
-        field: '',
-        startYear: '',
-        endYear: ''
+        years: ''
       });
     } else if (isEditing && editIndex > index) {
       setEditIndex(editIndex - 1);
@@ -87,12 +80,8 @@ const EducationForm = ({ setResumeData, resumeData }) => {
         <input type="text" id="school" name="school" placeholder='University Of Philippines' value={newEducation.school || ''} onChange={handleChange}/>
         <label htmlFor="degree">Degree:</label>
         <input type="text" id="degree" name="degree" placeholder='e.g Bachelor of Science' value={newEducation.degree || ''} onChange={handleChange}/>
-        <label htmlFor="field">Field of Study:</label>
-        <input type="text" id="field" name="field" placeholder='e.g Computer Science' value={newEducation.field || ''} onChange={handleChange}/>
-        <label htmlFor="startYear">Start:</label>
-        <input type="date" id="startYear" name="startYear" value={newEducation.startYear || ''} onChange={handleChange} />
-        <label htmlFor="endYear">Graduate Year:</label>
-        <input type="date" id="endYear" name="endYear" value={newEducation.endYear || ''} onChange={handleChange} />
+        <label htmlFor="years">Years:</label>
+        <input type="text" id="years" name="years" placeholder='e.g 2020 - 2024' value={newEducation.years || ''} onChange={handleChange} />
       </fieldset>
       <button id="addEducation" type="button" onClick={handleAddEducation}>
         {isEditing ? 'Update Education' : 'Add Education'}

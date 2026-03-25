@@ -4,8 +4,7 @@ const WorkForm = ({ setResumeData, resumeData }) => {
   const [newWork, setNewWork] = useState({
     company: '',
     role: '',
-    startDate: '',
-    endDate: '',
+    years: '',
     description: ''
   });
   const [isEditing, setIsEditing] = useState(false);
@@ -31,7 +30,7 @@ const WorkForm = ({ setResumeData, resumeData }) => {
         experience: [...prevData.experience, newWork]
       }));
     }
-    setNewWork({ company: '', role: '', startDate: '', endDate: '', description: '' });
+    setNewWork({ company: '', role: '', years: '', description: '' });
   };
 
   const handleEdit = (index) => {
@@ -49,7 +48,7 @@ const WorkForm = ({ setResumeData, resumeData }) => {
     if (isEditing && editIndex === index) {
       setIsEditing(false);
       setEditIndex(null);
-      setNewWork({ company: '', role: '', startDate: '', endDate: '', description: '' });
+      setNewWork({ company: '', role: '', years: '', description: '' });
     } else if (isEditing && editIndex > index) {
       setEditIndex(editIndex - 1);
     }
@@ -74,10 +73,8 @@ const WorkForm = ({ setResumeData, resumeData }) => {
         <input type="text" id="company" name="company" placeholder='e.g. Open AI' value={newWork.company || ''} onChange={handleChange} />
         <label htmlFor="position">Position:</label>
         <input type="text" id="position" name="role" placeholder='e.g. Software Engineer' value={newWork.role || ''} onChange={handleChange} />
-        <label htmlFor="startDate">Start Date:</label>
-        <input type="date" id="startDate" name="startDate" value={newWork.startDate || ''} onChange={handleChange} />
-        <label htmlFor="endDate">End Date:</label>
-        <input type="date" id="endDate" name="endDate" value={newWork.endDate || ''} onChange={handleChange} />
+        <label htmlFor="years">Years:</label>
+        <input type="text" id="years" name="years" placeholder="e.g 2020-2024" value={newWork.years || ''} onChange={handleChange} />
         <label htmlFor="description">Description:</label>
         <textarea id="description" name="description" placeholder='Type your experience here...' value={newWork.description || ''} onChange={handleChange}></textarea>
       </fieldset>
