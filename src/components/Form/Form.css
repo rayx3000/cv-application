@@ -10,6 +10,43 @@
     background: linear-gradient(38deg, rgba(136, 85, 237, 0.78) 0%, rgba(45, 163, 253, 0.78) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8855ED", endColorstr="#2DA3FD", GradientType=0);
     color: #fff;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(58, 134, 255, 0.5) transparent;
+}
+
+/* 1. The Track: We make it transparent so it doesn't clutter the UI */
+.form-container::-webkit-scrollbar {
+    width: 10px; /* Slightly wider to allow for the 'floating' padding */
+}
+
+.form-container::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+/* 2. The Thumb: The "Floating Pill" effect */
+.form-container::-webkit-scrollbar-thumb {
+    /* Using background-clip: padding-box allows the transparent border 
+       to act as a 'margin' around the scrollbar thumb */
+    background-color: rgba(58, 134, 255, 0.4); 
+    background-image: linear-gradient(180deg, rgba(110, 189, 242, 0.8) 0%, rgba(58, 134, 255, 0.8) 100%);
+    
+    border-radius: 20px;
+    border: 3px solid transparent; /* This creates the "floating" space */
+    background-clip: padding-box;
+    
+    transition: background-color 0.3s ease;
+}
+
+/* 3. Hover State: Subtle brightening and more opacity */
+.form-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(58, 134, 255, 0.7);
+    background-image: linear-gradient(180deg, rgba(110, 189, 242, 1) 0%, rgba(58, 134, 255, 1) 100%);
+    border: 2px solid transparent; /* Thicker thumb on hover */
+}
+
+/* 4. Active State: A slight "squeeze" or darkening */
+.form-container::-webkit-scrollbar-thumb:active {
+    background-color: rgba(30, 100, 220, 1);
 }
 
 .form-container > h1{
@@ -30,7 +67,7 @@
 form{
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 5px;
     width: 92%;
 }
 
@@ -48,10 +85,14 @@ fieldset {
 }
 
 :is(input, textarea){
-    background-color: #a579fc;
+    background: #a283f7;
+    background: -webkit-linear-gradient(202deg, rgba(162, 131, 247, 1) 0%, rgba(217, 121, 252, 0.75) 50%, rgba(165, 121, 252, 1) 100%);
+    background: -moz-linear-gradient(202deg, rgba(162, 131, 247, 1) 0%, rgba(217, 121, 252, 0.75) 50%, rgba(165, 121, 252, 1) 100%);
+    background: linear-gradient(202deg, rgba(162, 131, 247, 1) 0%, rgba(217, 121, 252, 0.75) 50%, rgba(165, 121, 252, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#A283F7", endColorstr="#A579FC", GradientType=0);
     padding: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
     color: #fff;
     font-size: 16px;
 }
@@ -61,23 +102,15 @@ fieldset {
 }
 
 input[type="file"] {
-    background-color: transparent;
+    background: transparent;
     padding: 0;
+    border-radius: 3px;
 }
 
-input[type="file"]::file-selector-button {
-    background-color: rgb(102, 0, 218);
-    color: #fff;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
+label[for="image"]{
+    font-weight: bold;
 }
 
-input[type="file"]::file-selector-button:hover {
-    background-color: rgb(149, 63, 247);
-}
 
 textarea{
     resize: none;
@@ -93,31 +126,35 @@ button:active{
     transform: scale(0.92)
 }
 
-fieldset > button{
+form > button, input[type="file"]::file-selector-button{
     display: inline-block;
-    width: 12vw;
-    padding: 5px;
-    border: none;
-    border-radius: 12px;
-    align-self: center;
-    background-color: rgb(102, 0, 218);
-    color: #fff;
-}
-
-form > button{
-    display: inline-block;
-    width: 15vw;
     padding: 5px;
     border: none;
     border-radius: 12px;
     align-self: center;
     background-color: rgb(157, 93, 230);
     color: #fff;
+    cursor: pointer;
 }
 
-fieldset > button:hover{
+form > button:hover, input[type="file"]::file-selector-button:hover{
     background-color: rgb(149, 63, 247);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+input[type="file"]::file-selector-button:active{
+    transform: scale(0.92);
+    background-color: rgb(141, 56, 241);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+input[type="file"]::file-selector-button{
+    width: 10vw;
+    padding: 2%;
+}
+
+form > button{
+    width: 15vw;
 }
 
 .saved-container{
@@ -132,13 +169,21 @@ fieldset > button:hover{
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    background-color: rgb(149, 63, 247);
+    background: #a054f7;
+    background: -webkit-linear-gradient(202deg, rgba(160, 84, 247, 1) 0%, rgba(215, 121, 252, 0.75) 50%, rgba(160, 84, 247, 1) 100%);
+    background: -moz-linear-gradient(202deg, rgba(160, 84, 247, 1) 0%, rgba(215, 121, 252, 0.75) 50%, rgba(160, 84, 247, 1) 100%);
+    background: linear-gradient(202deg, rgba(160, 84, 247, 1) 0%, rgba(215, 121, 252, 0.75) 50%, rgba(160, 84, 247, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#A054F7", endColorstr="#A054F7", GradientType=0);
     padding: 2px 12px;
     border-radius: 12px;
 }
 
 .saved-container > div:hover{
-    background-color: rgb(175, 107, 253);
+    background: #ad6eff;
+    background: -webkit-linear-gradient(202deg, rgba(173, 110, 255, 1) 0%, rgba(236, 173, 255, 0.75) 50%, rgba(173, 110, 255, 1) 100%);
+    background: -moz-linear-gradient(202deg, rgba(173, 110, 255, 1) 0%, rgba(236, 173, 255, 0.75) 50%, rgba(173, 110, 255, 1) 100%);
+    background: linear-gradient(202deg, rgba(173, 110, 255, 1) 0%, rgba(236, 173, 255, 0.75) 50%, rgba(173, 110, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#AD6EFF", endColorstr="#AD6EFF", GradientType=0);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
