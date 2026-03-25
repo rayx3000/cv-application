@@ -13,13 +13,18 @@ const CVSidebar = ({ resumeData }) => {
     contact, 
     expertise, 
     languages, 
-    additionalInfo 
+    additionalInfo,
+    image
   } = resumeData;
 
   return (
     <div className="cv-sidebar">
       <div className="cv-avatar">
-        <span>👤</span>
+        {image ? (
+          <img src={image} alt="Profile" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+        ) : (
+          <span>👤</span>
+        )}
       </div>
 
       <div className="cv-header">

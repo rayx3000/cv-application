@@ -9,6 +9,7 @@ import CertificationsForm from './CertificationsForm.jsx'
 import LanguagesForm from './LanguagesForm.jsx'
 import ReferencesForm from './ReferencesForm.jsx'
 import AddInfoForm from './AddInfoForm.jsx'
+import UploadImage from './UploadImage.jsx'
 
 const Form = ({ setResumeData, resumeData }) => {
   return (
@@ -16,6 +17,7 @@ const Form = ({ setResumeData, resumeData }) => {
         <h1>CV Form</h1>
         <div className="form-content">
             <PersonalForm setResumeData={setResumeData} resumeData={resumeData} />
+            <UploadImage setResumeData={setResumeData} resumeData={resumeData} />
             <ContactForm setResumeData={setResumeData} resumeData={resumeData} />
             <EducationForm setResumeData={setResumeData} resumeData={resumeData} />
             <WorkForm setResumeData={setResumeData} resumeData={resumeData} />
