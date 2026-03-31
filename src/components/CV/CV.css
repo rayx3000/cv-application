@@ -443,3 +443,23 @@
     padding: 28px 24px;
   }
 }
+
+/* ── Print Styles ── */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .cv-content, .cv-content * {
+    visibility: visible;
+  }
+  .cv-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
