@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './Form.css'
 import PersonalForm from './PersonalForm.jsx'
 import ContactForm from './ContactForm.jsx'
@@ -10,14 +10,13 @@ import LanguagesForm from './LanguagesForm.jsx'
 import ReferencesForm from './ReferencesForm.jsx'
 import AddInfoForm from './AddInfoForm.jsx'
 import UploadImage from './UploadImage.jsx'
-import { AppContext } from '../../App.jsx'
 
 const Form = ({ setResumeData, resumeData }) => {
-  const { isCvVisible } = useContext(AppContext);
-
   return (
-    <div className="form-container" style={{ display: isCvVisible ? 'none' : undefined }}>
-        <h1>CV Form</h1>
+    <div className="form-container">
+        <div className="form-header">
+            <h1>CV Form</h1>
+        </div>
         <div className="form-content">
             <PersonalForm setResumeData={setResumeData} resumeData={resumeData} />
             <UploadImage setResumeData={setResumeData} resumeData={resumeData} />
