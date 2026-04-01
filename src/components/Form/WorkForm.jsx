@@ -70,13 +70,13 @@ const WorkForm = ({ setResumeData, resumeData }) => {
       </div>
       <fieldset>
         <label htmlFor="company">Company Name:</label>
-        <input type="text" id="company" name="company" placeholder='e.g. Open AI' value={newWork.company || ''} onChange={handleChange} />
+        <input type="text" id="company" name="company" minLength="2" maxLength="35" placeholder='e.g. Open AI' value={newWork.company || ''} onChange={handleChange} />
         <label htmlFor="position">Position:</label>
-        <input type="text" id="position" name="role" placeholder='e.g. Software Engineer' value={newWork.role || ''} onChange={handleChange} />
+        <input type="text" id="position" name="role" minLength="2" maxLength="35" placeholder='e.g. Software Engineer' value={newWork.role || ''} onChange={handleChange} />
         <label htmlFor="years">Years:</label>
-        <input type="text" id="years" name="years" placeholder="e.g 2020-2024" value={newWork.years || ''} onChange={handleChange} />
+        <input type="text" id="years" name="years" minLength="2" maxLength="20" placeholder="e.g 2020-2024" value={newWork.years || ''} onChange={handleChange} />
         <label htmlFor="description">Description:</label>
-        <textarea id="description" name="description" placeholder='Type your experience here...' value={newWork.description || ''} onChange={handleChange}></textarea>
+        <textarea id="description" name="description" minLength="2" maxLength="200" placeholder='Type your experience here...' value={newWork.description || ''} onChange={handleChange}></textarea>
       </fieldset>
       <button id="addExperience" type="button" onClick={handleAdd}>
         {isEditing ? 'Update Experience' : 'Add Experience'}

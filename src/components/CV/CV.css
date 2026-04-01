@@ -395,6 +395,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  width: 20vw;
 }
 
 .cv-ref-name {
@@ -441,6 +442,7 @@
 
   .cv-main {
     padding: 28px 24px;
+    width: 100%;
   }
 }
 

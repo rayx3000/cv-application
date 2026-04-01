@@ -77,11 +77,11 @@ const EducationForm = ({ setResumeData, resumeData }) => {
       </div>
       <fieldset>
         <label htmlFor="school">School Name:</label>
-        <input type="text" id="school" name="school" placeholder='University Of Philippines' value={newEducation.school || ''} onChange={handleChange}/>
+        <input type="text" id="school" name="school" minLength="2" maxLength="30" placeholder='University Of Philippines' value={newEducation.school || ''} onChange={handleChange}/>
         <label htmlFor="degree">Degree:</label>
-        <input type="text" id="degree" name="degree" placeholder='e.g Bachelor of Science' value={newEducation.degree || ''} onChange={handleChange}/>
+        <input type="text" id="degree" name="degree" minLength="2" maxLength="30" placeholder='e.g Bachelor of Science' value={newEducation.degree || ''} onChange={handleChange}/>
         <label htmlFor="years">Years:</label>
-        <input type="text" id="years" name="years" placeholder='e.g 2020 - 2024' value={newEducation.years || ''} onChange={handleChange} />
+        <input type="text" id="years" name="years" minLength="2" maxLength="20" placeholder='e.g 2020 - 2024' value={newEducation.years || ''} onChange={handleChange} />
       </fieldset>
       <button id="addEducation" type="button" onClick={handleAddEducation}>
         {isEditing ? 'Update Education' : 'Add Education'}

@@ -3,4 +3,14 @@ main{
     flex-direction: row;
     justify-content: space-evenly;
     position: relative;
+    align-items: flex-start;
+}
+
+@media (max-width: 1200px) {
+    main {
+        flex-direction: column;
+    }
+    .hide-on-mobile {
+        display: none !important;
+    }
 }

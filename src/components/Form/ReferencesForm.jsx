@@ -70,13 +70,13 @@ const ReferencesForm = ({ setResumeData, resumeData }) => {
         </div>
         <fieldset>
           <label htmlFor="referenceName">Reference Name:</label>
-          <input type="text" id="referenceName" name="name" placeholder='e.g. Jane Smith' value={newRef.name || ''} onChange={handleChange} />
+          <input type="text" id="referenceName" name="name" placeholder='e.g. Jane Smith' minLength="2" maxLength="20" value={newRef.name || ''} onChange={handleChange} />
           <label htmlFor="referenceContact">Reference Contact:</label>
-          <input type="text" id="referenceContact" name="phone" placeholder='e.g. 123-456-7890' value={newRef.phone || ''} onChange={handleChange} />
+          <input type="text" id="referenceContact" name="phone" placeholder='e.g. 123-456-7890' minLength="10" maxLength="15" value={newRef.phone || ''} onChange={handleChange} />
           <label htmlFor="referenceEmail">Reference Email:</label>
-          <input type="email" id="referenceEmail" name="email" placeholder='e.g. janesmith@example.com' value={newRef.email || ''} onChange={handleChange} />
+          <input type="email" id="referenceEmail" name="email" placeholder='e.g. janesmith@example.com' minLength="2" maxLength="20" value={newRef.email || ''} onChange={handleChange} />
           <label htmlFor='referenceWork'>Reference Work:</label>
-          <input type="text" id="referenceWork" name="company" placeholder='e.g. Software Engineer' value={newRef.company || ''} onChange={handleChange} />
+          <input type="text" id="referenceWork" name="company" placeholder='e.g. Software Engineer' minLength="2" maxLength="20" value={newRef.company || ''} onChange={handleChange} />
         </fieldset>
         <button id="addReference" type="button" onClick={handleAdd}>
           {isEditing ? 'Update Reference' : 'Add Reference'}
