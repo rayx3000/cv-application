@@ -25,8 +25,8 @@
    SIDEBAR
 ══════════════════════════ */
 .cv-sidebar {
+  flex-shrink: 1;
   width: 260px;
-  min-width: 260px;
   background: #285F96;
   background: -webkit-linear-gradient(8deg, rgba(40, 95, 150, 1) 0%, rgba(0, 75, 150, 0.75) 50%, rgba(40, 95, 150, 1) 100%);
   background: -moz-linear-gradient(8deg, rgba(40, 95, 150, 1) 0%, rgba(0, 75, 150, 0.75) 50%, rgba(40, 95, 150, 1) 100%);
@@ -394,7 +394,7 @@
 .cv-ref-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 50px;
   width: 20vw;
 }
 
@@ -403,12 +403,15 @@
   font-weight: 800;
   color: #1a202c;
   margin: 0 0 2px 0;
+  width: fit-content;
+  display: inline-block;
 }
 
 .cv-ref-company {
   font-size: 13px;
   color: #718096;
   margin: 0 0 8px 0;
+  display: inline-block;
 }
 
 .cv-ref-detail {
@@ -417,32 +420,503 @@
   font-size: 12px;
   color: #4a5568;
   margin-bottom: 4px;
+  display: inline-block;
 }
 
 .cv-ref-label {
   font-weight: 700;
   color: #2d3748;
   min-width: 44px;
+  display: inline-block;
 }
 
-/* ── Responsive ── */
-@media (max-width: 680px) {
-  .cv-content {
-    flex-direction: column;
+@media(max-width: 1200px) {
+  .cv-container{
+    align-self: center;
   }
+}
 
-  .cv-sidebar {
-    width: 100%;
-    min-width: unset;
-  }
+@media(max-width: 900px) {
+.cv-container > h1{
+  font-size: 2rem;
+}
 
-  .cv-ref-grid {
+.cv-content {
+  width: 88vw;
+}
+.cv-sidebar{
+  width: 23.5vw;
+}
+
+.cv-name {
+  font-size: 30px;
+}
+
+.cv-job-title {
+  font-size: 11px;
+}
+
+.cv-summary {
+  font-size: 11px;
+}
+
+.cv-avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.cv-avatar span {
+  width: 100px;
+  height: 100px;
+  font-size: 45px;
+}
+
+.cv-side-title {
+  font-size: 9.5px;
+}
+
+.cv-contact-label {
+  font-size: 9.5px;
+}
+
+.cv-contact-value {
+  font-size: 11px;
+}
+
+.cv-link-label {
+  font-size: 9.5px;
+}
+
+.cv-link-value {
+  font-size: 11px;
+}
+
+.cv-skill-item {
+  font-size: 11px;
+}
+
+.cv-lang-item {
+  font-size: 11px;
+}
+
+.cv-main {
+  padding: 39px 39px 30px 39px;
+  gap: 25px;
+}
+
+.cv-section-title {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+}
+
+.cv-section-divider {
+  margin-bottom: 18px;
+}
+
+.cv-edu-item {
+  gap: 16.5px;
+  margin-bottom: 22px;
+}
+
+.cv-edu-timeline {
+  padding-top: 4.5px;
+}
+
+.cv-edu-dot {
+  width: 11px;
+  height: 11px;
+}
+
+.cv-edu-years {
+  font-size: 11.5px;
+}
+
+.cv-edu-degree {
+  font-size: 12px;
+  margin: 0 0 3.5px 0;
+}
+
+.cv-edu-school {
+  font-size: 11.px;
+  color: #718096;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.cv-cert-item {
+  gap: 11px;
+}
+
+.cv-cert-timeline {
+  padding-top: 14.5px;
+}
+
+.cv-cert-dot {
+  width: 11px;
+  height: 11px;
+}
+
+.cv-cert-date {
+  font-size: 11px;  
+}
+
+.cv-cert-name {
+  font-size: 12px;
+}
+
+.cv-cert-company{
+  font-size: 12px;
+}
+
+.cv-cert-desc {
+  font-size: 11px;
+  color: #4a5568;
+  line-height: 1.65;
+}
+
+
+.cv-exp-item {
+  gap: 17.5px;
+  margin-bottom: 22px;
+}
+
+.cv-exp-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4.6px;
+}
+
+.cv-exp-dot {
+  width: 11px;
+  height: 11px;
+}
+
+.cv-exp-line {
+  width: 1px;
+  flex: 1;
+  background-color: #e2e8f0;
+  margin-top: 5px;
+  min-height: 20px;
+}
+
+.cv-exp-content {
+  flex: 1;
+}
+
+.cv-exp-years {
+  font-size: 11.5px;
+}
+
+.cv-exp-company {
+  font-size: 11.75px;
+  color: #718096;
+  margin: 0 0 4px 0;
+  font-family: Arial, sans-serif;
+}
+
+.cv-exp-role {
+  font-size: 12px;
+}
+
+.cv-exp-desc {
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.cv-ref-grid {
+  gap: 35px;
+  width: 23vw;
+}
+
+.cv-ref-name {
+  font-size: 12px;
+  margin: 0 0 1.8px 0;
+}
+
+.cv-ref-company {
+  font-size: 11px;
+  color: #718096;
+  margin: 0 0 7px 0;
+}
+
+.cv-ref-detail {
+  font-size: 10px;
+}
+}
+
+@media(max-width: 620px){
+.cv-content {
+  width: 92vw;
+}
+
+.cv-sidebar{
+  width: 25.5vw;
+}
+
+.cv-main{
+  padding: 30px 30px 20px 30px;
+  gap: 20px;
+}
+
+.cv-ref-item{
+  display: inline-block;
+}
+
+.cv-ref-grid {
+  gap: 18px;
+  width: 20vw;
+}
+
+}
+
+@media(max-width: 550px) {
+.cv-container > h1{
+  font-size: 1.75rem;
+}
+
+.cv-content {
+  width: 96.5vw;
+}
+
+.cv-sidebar{
+  width: 27.5vw;
+}
+
+
+.cv-name {
+  font-size: 13px;
+}
+
+.cv-job-title {
+  font-size: 10px;
+}
+
+.cv-summary {
+  font-size: 10px;
+}
+
+
+.cv-avatar span {
+  width: 80px;
+  height: 80px;
+  font-size: 39px;
+}
+
+.cv-side-title {
+  font-size: 8.5px;
+}
+
+.cv-contact-label {
+  font-size: 8.5px;
+}
+
+.cv-contact-value {
+  font-size: 10px;
+}
+
+.cv-link-label {
+  font-size: 8.5px;
+}
+
+.cv-link-value {
+  font-size: 10px;
+}
+
+.cv-skill-item {
+  font-size: 10px;
+}
+
+.cv-lang-item {
+  font-size: 10px;
+}
+
+.cv-main {
+  padding: 23px 23px 17.5px 23px;
+  gap: 20px;
+}
+
+.cv-section-title {
+  font-size: 15px;
+  margin: 0 0 3px 0;
+}
+
+.cv-section-divider {
+  margin-bottom: 5px;
+}
+
+.cv-edu-item {
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.cv-edu-timeline {
+  padding-top: 3.8px;
+}
+
+.cv-edu-dot {
+  width: 9px;
+  height: 9px;
+}
+
+.cv-edu-years {
+  font-size: 9px;
+}
+
+.cv-edu-degree {
+  font-size: 10px;
+  margin: 0 0 3.5px 0;
+}
+
+.cv-edu-school {
+  font-size: 9.8px;
+  color: #718096;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.cv-cert-item {
+  gap: 9px;
+}
+
+.cv-cert-timeline {
+  padding-top: 10px;
+}
+
+.cv-cert-dot {
+  width: 9px;
+  height: 9px;
+}
+
+.cv-cert-date {
+  font-size: 10px;  
+}
+
+.cv-cert-name {
+  font-size: 10.8px;
+}
+
+.cv-cert-company{
+  font-size: 10.5px;
+}
+
+.cv-cert-desc {
+  font-size: 10px;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.cv-expertise-list{
+  grid-template-columns: 1fr;
+}
+
+.cv-exp-item {
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.cv-exp-timeline {
+  padding-top: 4.2px;
+}
+
+.cv-exp-dot {
+  width: 9px;
+  height: 9px;
+}
+
+.cv-exp-line {
+  margin-top: 3.8px;
+  min-height: 28px;
+}
+
+.cv-exp-years {
+  font-size: 9.8px;
+}
+
+.cv-exp-company {
+  font-size: 10px;
+  color: #718096;
+  margin: 0 0 2.8px 0;
+}
+
+.cv-exp-role {
+  font-size: 10px;
+}
+
+.cv-exp-desc {
+  font-size: 9.5px;
+  line-height: 1.45;
+}
+
+.cv-ref-grid {
+  grid-template-columns: 1fr;
+  gap: 18px;
+  width: 28vw;
+}
+
+.cv-ref-name {
+  font-size: 10px;
+  margin: 0 0 1.8px 0;
+}
+
+.cv-ref-company {
+  font-size: 9.75px;
+  margin: 0 0 5px 0;
+}
+
+.cv-ref-detail {
+  font-size: 9px;
+}
+}
+
+@media(max-width: 480px) {
+  .cv-language-list {
     grid-template-columns: 1fr;
   }
 
-  .cv-main {
-    padding: 28px 24px;
+}
+
+@media(max-width: 390px) {
+  .cv-container > h1{
+    font-size: 1.65rem;
+  }
+  .cv-content {
+    width: 97.5vw;
+    flex-direction: column;
+  }
+
+  .cv-sidebar{
+    width: 97.5vw;
+    padding: 20px;
+  }
+
+  .cv-side-section{
+    align-items: center;
+      text-align: center;
+  }
+
+  .cv-expertise-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cv-main{
+    width: 97.5vw;
+    padding: 20px;
+  }
+
+  .cv-ref-grid {
     width: 100%;
+  }
+
+  .cv-ref-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
