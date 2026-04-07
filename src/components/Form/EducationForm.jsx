@@ -66,13 +66,15 @@ const EducationForm = ({ setResumeData, resumeData }) => {
       <p>Education Background</p>
       <div className='saved-container education-completed'>
         {resumeData.education.map((edu, index) => (
-          <div key={index}>
-            <p><span>{edu.school}</span>/<span>{edu.degree}</span></p>
-            <div className='saved-options'>
-              <i id="edit" className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
-              <i id="delete" className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+          !(isEditing && editIndex === index) && (
+            <div key={index}>
+              <p><span>{edu.school}</span>/<span>{edu.degree}</span></p>
+              <div className='saved-options'>
+                <i id="edit" className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
+                <i id="delete" className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+              </div>
             </div>
-          </div>
+          )
         ))}
       </div>
       <fieldset>
