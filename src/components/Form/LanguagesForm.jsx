@@ -54,13 +54,15 @@ const LanguagesForm = ({ setResumeData, resumeData }) => {
       <p>Languages</p>
       <div className='saved-container languages-completed'>
         {resumeData?.languages?.map((lang, index) => (
-          <div key={index}>
-            <p><span>{lang}</span></p>
-            <div className='saved-options'>
-              <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
-              <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+          !(isEditing && editIndex === index) && (
+            <div key={index}>
+              <p><span>{lang}</span></p>
+              <div className='saved-options'>
+                <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
+                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+              </div>
             </div>
-          </div>
+          )
         ))}
       </div>
       <fieldset>

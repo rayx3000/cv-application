@@ -54,13 +54,15 @@ const SkillsForm = ({ setResumeData, resumeData }) => {
       <p>Skills</p>
       <div className='saved-container skills-container'>
         {resumeData?.expertise?.map((skill, index) => (
-          <div key={index} className='skills'>
-            <p>{skill}</p>
-            <div className='saved-options'>
-              <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
-              <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+          !(isEditing && editIndex === index) && (
+            <div key={index} className='skills'>
+              <p>{skill}</p>
+              <div className='saved-options'>
+                <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
+                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+              </div>
             </div>
-          </div>
+          )
         ))}
       </div>
       <fieldset>

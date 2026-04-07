@@ -59,13 +59,15 @@ const ReferencesForm = ({ setResumeData, resumeData }) => {
         <p>References</p>
         <div className='saved-container references-completed'>
           {resumeData?.references?.map((ref, index) => (
-            <div key={index}>
-              <p><span>{ref.name}</span>/<span>{ref.company}</span></p>
-              <div className='saved-options'>
-                <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
-                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+            !(isEditing && editIndex === index) && (
+              <div key={index}>
+                <p><span>{ref.name}</span>/<span>{ref.company}</span></p>
+                <div className='saved-options'>
+                  <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
+                  <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+                </div>
               </div>
-            </div>
+            )
           ))}
         </div>
         <fieldset>

@@ -59,13 +59,15 @@ const WorkForm = ({ setResumeData, resumeData }) => {
       <p>Work Experience</p>
       <div className='saved-container work-completed'>
         {resumeData?.experience?.map((exp, index) => (
-          <div key={index}>
-            <p><span>{exp.company}</span>/<span>{exp.role}</span></p>
-            <div className='saved-options'>
-              <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
-              <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+          !(isEditing && editIndex === index) && (
+            <div key={index}>
+              <p><span>{exp.company}</span>/<span>{exp.role}</span></p>
+              <div className='saved-options'>
+                <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
+                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+              </div>
             </div>
-          </div>
+          )
         ))}
       </div>
       <fieldset>

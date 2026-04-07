@@ -59,13 +59,15 @@ const CertificationsForm = ({ setResumeData, resumeData }) => {
         <p>Certifications</p>
         <div className='saved-container certifications-completed'>
           {resumeData?.certifications?.map((cert, index) => (
-            <div key={index}>
-              <p><span>{cert.name}</span>/<span>{cert.company}</span></p>
-              <div className='saved-options'>
-                <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
-                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+            !(isEditing && editIndex === index) && (
+              <div key={index}>
+                <p><span>{cert.name}</span>/<span>{cert.company}</span></p>
+                <div className='saved-options'>
+                  <i className="fa-solid fa-pen" onClick={() => handleEdit(index)}></i>
+                  <i className="fa-solid fa-trash-can" onClick={() => handleDelete(index)}></i>
+                </div>
               </div>
-            </div>
+            )
           ))}
         </div>
         <fieldset>
