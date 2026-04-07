@@ -676,7 +676,7 @@
 }
 
 .cv-content {
-  width: 96.5vw;
+  width: 93.5vw;
 }
 
 .cv-sidebar{
@@ -874,6 +874,10 @@
     grid-template-columns: 1fr;
   }
 
+  .cv-container{
+    align-self: center;
+  }
+
 }
 
 @media(max-width: 390px) {
@@ -881,12 +885,12 @@
     font-size: 1.65rem;
   }
   .cv-content {
-    width: 97.5vw;
+    width: 95.5vw;
     flex-direction: column;
   }
 
   .cv-sidebar{
-    width: 97.5vw;
+    width: 95.5vw;
     padding: 20px;
   }
 

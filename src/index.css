@@ -9,6 +9,7 @@ body {
     background: -moz-linear-gradient(18deg, rgba(71, 177, 230, 1) 0%, rgba(167, 78, 245, 1) 100%);
     background: linear-gradient(18deg, rgba(71, 177, 230, 1) 0%, rgba(167, 78, 245, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#47B1E6", endColorstr="#A74EF5", GradientType=0);
+    overflow-x: hidden;
 }
 
 /* 1. Firefox */
